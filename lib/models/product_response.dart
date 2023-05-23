@@ -14,7 +14,7 @@ class ProductResponse {
 
     return ProductResponse(
       success: json['success'] as bool?,
-      result: Result.fromJson(json['result']),
+      result: json['result'] != null ? Result.fromJson(json['result']) : null,
     );
   }
 }
@@ -105,11 +105,11 @@ class Product {
       genre: (json['genre'] as List<dynamic>?)
           ?.map((x) => Genre.fromJson(x))
           .toList(),
-      region: Region.fromJson(json['region']),
+      region: json['region'] != null ? Region.fromJson(json['region']) : null,
       tags: (json['tags'] as List<dynamic>?)
           ?.map((x) => Tag.fromJson(x))
           .toList(),
-      platform: Platform.fromJson(json['platform']),
+      platform: json['platform'] != null ? Platform.fromJson(json['platform']) : null,
       sellingPrice: json['sellingPrice'] as int?,
       isKid: json['isKid'] as bool?,
       description: json['description'] as String?,

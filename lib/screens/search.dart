@@ -246,7 +246,7 @@ class _ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.fromLTRB(0, 40, 0, 0),
+      margin: const EdgeInsets.fromLTRB(0, 50, 0, 0),
       height: 224,
       width: 150,
       child: Stack(
@@ -295,6 +295,7 @@ class _ItemWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(height: 10),
           Text(
             product.title ?? "",
             style: const TextStyle(
@@ -347,7 +348,7 @@ class _ItemWidget extends StatelessWidget {
       child: Image.network(
         product.image ?? "",
         height: 120,
-        width: 145,
+        width: 140,
         fit: BoxFit.fill,
       ),
     );
